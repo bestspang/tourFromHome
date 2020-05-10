@@ -1,6 +1,6 @@
-# Plantly Project
+# Tour from Home Project
 
-**Plantly REST API** is an IOT project that willing to help plant grows.
+**Tour from Home** for สสส.
 ....
 ..
 .
@@ -17,17 +17,11 @@ enjoy!
 
 ## Details
 #### Description
-- This is a Description of my other project!!!
-- I have use the sphere instead of hands to minimize the project and its look nice
-- kinda change it to Dark-Pink theme
-- the place will be able to move after go into the sink (on purpose) because I think it feel better!
-- however its will be removed from the level within the specific time
-- just stand at the spawn point and you'll be able to reach for all the plates
-- able to restart
+-
 
 #### Implementation
 
-This project is implemented using Flask, and is a REST API for Greens.
+This project is implemented using Flask.
 
 ## Updates
 
@@ -44,8 +38,8 @@ This project is implemented using Flask, and is a REST API for Greens.
 
 ## Documentation
 
-Documentation is available at [abbok.net](https://www.abbok.net/).
+Documentation is available at [idayx.com](https://www.idayx.com/).
 
 ## License
 
-**Plantly** is published under [MIT License 2019](https://github.com/bestspang/Plantly/blob/master/LICENSE).
+**Tour from Home** is published under [MIT License 2019](https://github.com/bestspang/Plantly/blob/master/LICENSE).
