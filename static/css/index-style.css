@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Kanit:100,200,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+html { font-family: 'Open Sans', sans-serif; display: block;
+    margin: 0px auto; text-align: center;color: #333333;}
+body{margin-top: 50px;}
+h1 {margin: 10px;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: 'Kanit', sans-serif;
+    auto 30px;}
+
+h2 {margin: 10px;
+    font-size: 30px;
+    font-weight: 100;
+    font-family: 'Kanit', sans-serif;
+    auto 30px;}
+.inasso{font-size: 20px;}
+.side-by-side{display: inline-block;vertical-align: middle;position: relative;}
+.humidity-icon{background-color: #3498db;width: 30px;height: 30px;border-radius: 50%;line-height: 36px;}
+.humidity-text{font-weight: 600;padding-left: 15px;font-size: 19px;width: 160px;text-align: left;}
+.humidity{font-weight: 300;font-size: 60px;color: #3498db;}
+.temperature-icon{background-color: #f39c12;width: 30px;height: 30px;border-radius: 50%;line-height: 40px;}
+.temperature-text{font-weight: 600;padding-left: 15px;font-size: 19px;width: 160px;text-align: left;}
+.temperature{font-weight: 300;font-size: 60px;color: #f39c12;}
+.superscript{font-size: 17px;font-weight: 600;position: absolute;right: -20px;top: 15px;}
+.data{padding: 10px;}
+
+
+
+.material {
+	 height: 40px;
+	 padding: 0 40px;
+	 font-size: 18px;
+	 text-decoration: none;
+	 color: #fff;
+	 border-radius: 45px;
+	 background-color: #2196f3;
+	 border: none;
+	 -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.1);
+	 -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.1);
+	 box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.1);
+	 margin: 25px 0;
+	 display: inline-block;
+	 line-height: 40px;
+	 text-align: center;
+	 overflow: hidden;
+	 position: relative;
+	 font-family: 'Roboto', 'Helvetica', 'Arial', 'Sans Serif';
+	 box-sizing: border-box;
+	 -webkit-transition: 0.3s ease;
+	 transition: 0.3s ease;
+}
+ .material.full {
+	 width: 100%;
+}
+ .material.sm {
+	 width: 150px;
+}
+ .material.md {
+	 width: 200px;
+}
+ .material.lg {
+	 width: 300px;
+}
+ .material .ink {
+	 position: absolute;
+	 border-radius: 50%;
+	 height: 1px;
+	 width: 1px;
+	 border: 1px solid rgba(13, 71, 161, 0.8);
+	 -webkit-transform: translate(-50%, -50%);
+	 transform: translate(-50%, -50%);
+	 pointer-events: none;
+	 opacity: 0.8;
+	 box-sizing: border-box;
+	 -webkit-transition: 0.3s ease;
+	 transition: 0.3s ease;
+}
+ .material:active, .material:focus {
+	 background-color: #1976d2;
+	 -webkit-box-shadow: 0px 4px 3px 0px rgba(50, 50, 50, 0.2);
+	 -moz-box-shadow: 0px 4px 3px 0px rgba(50, 50, 50, 0.2);
+	 box-shadow: 0px 4px 3px 0px rgba(50, 50, 50, 0.2);
+	 outline: 0;
+	 -webkit-transition: 0.3s ease;
+	 transition: 0.3s ease;
+}
+ .material:hover {
+	 background-color: #1669bb;
+	 -webkit-box-shadow: 0px 5px 3px 0px rgba(50, 50, 50, 0.3);
+	 -moz-box-shadow: 0px 5px 3px 0px rgba(50, 50, 50, 0.3);
+	 box-shadow: 0px 5px 3px 0px rgba(50, 50, 50, 0.3);
+	 cursor: pointer;
+	 -webkit-transition: 0.3s ease;
+	 transition: 0.3s ease;
+}
+ .material.disabled {
+	 background-color: #999;
+	 color: #666;
+	 -webkit-box-shadow: 0 0 0 0 transparent;
+	 -moz-box-shadow: 0 0 0 0 transparent;
+	 box-shadow: 0 0 0 0 transparent;
+}

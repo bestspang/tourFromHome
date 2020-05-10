@@ -1,0 +1,12 @@
+Flask
+Flask-RESTful
+Flask-JWT
+Flask-SQLAlchemy
+Flask-User
+Flask-BabelEx
+flask-socketio
+uwsgi
+psycopg2
+gevent
+dash
+pandas

@@ -1,0 +1,41 @@
+{% extends "main/main_base.html" %}  {# main/main_base.html extends layout.html #}
+
+{% block content %}
+<nav class="nav">
+    <a href={{ url_for('home_page') }} class="nav-item" active-color="orange">{%trans%}Home{%endtrans%}</a>
+    <a href={{ url_for('dashboard') }} class="nav-item" active-color="rebeccapurple">{%trans%}Dashboard{%endtrans%}</a>
+    <a href={{ url_for('member_page') }} class="nav-item" active-color="green">{%trans%}Member{%endtrans%}</a>
+    {% for role in current_user.roles %}
+    {% if role.name == 'admin' %}
+    <a href={{ url_for('admin_page') }} class="nav-item" active-color="blue">{%trans%}Admin{%endtrans%}</a>
+    {% endif %}
+    {% endfor %}
+    {% if current_user.is_authenticated %}
+    <a href={{ url_for('user_profile_page') }} class="nav-item is-active" active-color="salmon">{%trans%}Profile{%endtrans%}</a>
+    <a href={{ url_for('user.logout') }} class="nav-item" active-color="red">{%trans%}Logout{%endtrans%}</a>
+    {% else %}
+    <a href={{ url_for('user.login') }} class="nav-item" active-color="yellow">{%trans%}Login{%endtrans%}</a>
+    {% endif %}
+    <span class="nav-indicator"></span>
+</nav>
+
+<h1>User Profile</h1>
+
+<p><a href="{{ url_for('user.change_password') }}">Change password</a></p>
+
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<form action="" method="POST" class="form" role="form">
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4">
+    {{ form.hidden_tag() }}
+
+    {{ render_field(form.first_name, tabindex=240) }}
+
+    {{ render_field(form.last_name, tabindex=250) }}
+
+    {{ render_submit_field(form.submit, tabindex=280) }}
+    </div>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "main/main_base.html" %}  {# main/main_base.html extends layout.html #}
+
+{% block content %}
+    <nav class="nav">
+        <a href={{ url_for('home_page') }} class="nav-item" active-color="orange">{%trans%}Home{%endtrans%}</a>
+        <a href={{ url_for('dashboard') }} class="nav-item" active-color="rebeccapurple">{%trans%}Dashboard{%endtrans%}</a>
+        <a href={{ url_for('member_page') }} class="nav-item" active-color="green">{%trans%}Member{%endtrans%}</a>
+        {% for role in current_user.roles %}
+        {% if role.name == 'admin' %}
+        <a href={{ url_for('admin_page') }} class="nav-item is-active" active-color="blue">{%trans%}Admin{%endtrans%}</a>
+        {% endif %}
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+        <a href={{ url_for('user.logout') }} class="nav-item" active-color="red">{%trans%}Logout{%endtrans%}</a>
+        {% else %}
+        <a href={{ url_for('user.login') }} class="nav-item" active-color="yellow">{%trans%}Login{%endtrans%}</a>
+        {% endif %}
+        <span class="nav-indicator"></span>
+    </nav>
+    <h2>{%trans%}Admin Page{%endtrans%}</h2>
+{% endblock %}

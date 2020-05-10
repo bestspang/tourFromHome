@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/login-app.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/login-style.css">
+    <title>Abbok Login Page</title>
+
+</head>
+
+
+<body>
+
+
+    <div class="containers is-login" id="mainContainer">
+
+        <div class="goback-container">
+            <a onclick="window.location.href='/'" class="btn-floating btn-large waves-effect waves-light yellow">
+                <i class="material-icons black-text center-align">first_page</i>
+            </a>
+        </div>
+
+	<div class="card card--login shadow-2dp is-active" id="logInForm">
+
+		<div class="card__content">
+
+            <form action="registers" method="post" name="loginform">
+
+			<div class="inputfield">
+				<input class="inputfield__input" type="text" name="username">
+				<label class="inputfield__label">Username</label>
+				<span class="inputfield__underline"></span>
+			</div>
+			<div class="inputfield">
+				<input class="inputfield__input" type="password" name="password">
+				<label class="inputfield__label">Password</label>
+				<span class="inputfield__underline"></span>
+			</div>
+
+			<span class="toggle toggle--block toggle--center">
+				<input class="toggle__input" type="checkbox" id="remember">
+				<label class="toggle__label" for="remember">Remember me?</label>
+				<label class="toggle__checkbox" for="remember">
+					<span class="sr-only">Toggle remember me.</span>
+					<svg class="toggle__checkbox-mark" viewBox="0 0 18 18" aria-label="check"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
+				</label>
+			</span>
+
+			<p class="text-center"><a href="#" data-toggle="form" data-target="amnesiaForm" data-type="amnesia">Forgot your password?</a></p>
+		</div>
+		<div class="card__action">
+			<button class="btn btn--primary btn--block" type="submit" value = "submit">
+				Sign in
+			</button>
+		</div>
+        </form>
+		<div class="card__action">
+			<button class="btn btn--secondry btn--block" data-toggle="form" data-target="registerForm" data-type="register" type="button">
+				Register
+			</button>
+		</div>
+	</div>
+
+	<div class="card card--amnesia shadow-2dp" id="amnesiaForm">
+		<div class="card__content">
+			<div class="inputfield">
+				<input class="inputfield__input" type="email">
+				<label class="inputfield__label">Email</label>
+				<span class="inputfield__underline"></span>
+			</div>
+		</div>
+		<div class="card__action">
+			<button class="btn btn--flat btn--primary" type="button">
+				Reset password
+			</button>
+			<button class="btn btn--flat" data-toggle="form" data-target="logInForm" data-type="login" type="button">
+				Cancel
+			</button>
+		</div>
+	</div>
+
+	<div class="card card--register shadow-2dp" id="registerForm">
+		<div class="card__content">
+
+            <form action="{{ url_for('userregister') }}" method="post">
+
+			<div class="inputfield">
+				<input class="inputfield__input" type="email" name="email">
+				<label class="inputfield__label">Email <i class="required">*</i></label>
+				<span class="inputfield__underline"></span>
+			</div>
+			<div class="inputfield">
+				<input class="inputfield__input" type="text" name="username">
+				<label class="inputfield__label">Username <i class="required">*</i></label>
+				<span class="inputfield__underline"></span>
+			</div>
+			<div class="inputfield">
+				<input class="inputfield__input" type="password" name="password">
+				<label class="inputfield__label">Password <i class="required">*</i></label>
+				<span class="inputfield__underline"></span>
+			</div>
+			<div class="inputfield">
+				<input class="inputfield__input" type="password" name="confirmpass">
+				<label class="inputfield__label">Password Confirm <i class="required">*</i></label>
+				<span class="inputfield__underline"></span>
+			</div>
+
+			<span class="toggle toggle--block">
+				<input class="toggle__input" type="checkbox" id="subscribe">
+				<label class="toggle__label" for="subscribe">Subscribe to our newsletter?</label>
+				<label class="toggle__checkbox" for="subscribe">
+					<span class="sr-only">Toggle newsletter subscription.</span>
+					<svg class="toggle__checkbox-mark" viewBox="0 0 18 18" aria-label="check"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
+				</label>
+			</span>
+			<span class="toggle toggle--block">
+				<input class="toggle__input" type="checkbox" id="terms">
+				<label class="toggle__label" for="terms">Agree to terms and conditions? <i class="required">*</i></label>
+				<label class="toggle__checkbox" for="terms">
+					<span class="sr-only">Toggle terms and conditions agreement.</span>
+					<svg class="toggle__checkbox-mark" viewBox="0 0 18 18" aria-label="check"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
+				</label>
+			</span>
+
+			<p class="text-center">Fields marked <i class="required">*</i> are required.</p>
+		</div>
+		<div class="card__action">
+			<button class="btn btn--primary btn--block" type="submit" value = "submit">
+				Create account
+			</button>
+		</div>
+
+        </form>
+
+		<div class="card__action">
+			<button class="btn btn--secondry btn--block" data-toggle="form" data-target="logInForm" data-type="login" type="button">
+				Log in
+			</button>
+		</div>
+    	</div>
+    </div>
+
+</body>
+</html>
