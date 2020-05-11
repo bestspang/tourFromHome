@@ -60,11 +60,11 @@
                 renderer = new THREE.WebGLRenderer({antialias:true});
                 renderer.setSize(window.innerWidth,window.innerHeight);
 
-                controls = new THREE.OrbitContrtol(camera, renderer.domElement);
+                //controls = new THREE.OrbitContrtol(camera, renderer.domElement);
                 document.body.appendChild(renderer.domElement);
 
                 let loader = new THREE.GLTFLoader();
-                loader.load('scene.gltf', function(gltf){
+                loader.load('../../static/js/scene.gltf', function(gltf){
                     place = gltf.scene.children[0];
                     place.scale.set(0.5,0.5,0.5);
                     scene.add(gltf.scene);
@@ -73,7 +73,7 @@
             }
             function animate(){
                 requestAnimationFrame(animate);
-                controls.update();
+                //controls.update();
                 renderer.render(scene,camera);
             }
             init();
