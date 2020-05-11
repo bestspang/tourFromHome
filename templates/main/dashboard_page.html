@@ -29,7 +29,7 @@
             position: absolute;
             top: 0px;
             width: 100%;
-            padding: 10px;
+            padding: 12%;
             box-sizing: border-box;
             text-align: center;
             -moz-user-select: none;
@@ -38,6 +38,9 @@
             user-select: none;
             pointer-events: none;
             z-index: 1;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: 'Kanit', sans-serif;
         }
     </style>
 </head>
@@ -62,12 +65,11 @@
 
 <h1>DASHBOARD</h1>
 
-<div id="container">
-    <div id="info">
-    	<a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
-    	Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
-    	<a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
-    </div>
+<div id="container"></div>
+<div id="info">
+    <a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
+    Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
+    <a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
 </div>
 
 <script>
@@ -89,7 +91,7 @@
         // controls = new THREE.OrbitContrtol(camera);
         // controls.addEventListener('change', renderer);
 
-        hlight = new THREE.AmbientLight(0x404040, 10);
+        hlight = new THREE.AmbientLight(0x404040, 1);
         scene.add(hlight);
 
         // directionalLight = new THREE.DirectionalLight(0xffffff,10);
@@ -124,6 +126,7 @@
 
         controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enablePan = false;
+        controls.enableZoom = false;
 
         container.appendChild( renderer.domElement );
         //document.body.appendChild(renderer.domElement);
