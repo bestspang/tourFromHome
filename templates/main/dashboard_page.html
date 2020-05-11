@@ -20,9 +20,24 @@
         }
 
         #container {
+            height: 80%;
             width: 100%;
             margin: 0;
             overflow: hidden;
+        }
+        #info {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
         }
     </style>
 </head>
@@ -47,12 +62,12 @@
 
 <h1>DASHBOARD</h1>
 
-<div id="container"></div>
-
-<div id="info">
-	<a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
-	Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
-	<a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
+<div id="container">
+    <div id="info">
+    	<a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
+    	Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
+    	<a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
+    </div>
 </div>
 
 <script>
@@ -77,12 +92,12 @@
         hlight = new THREE.AmbientLight(0x404040, 10);
         scene.add(hlight);
 
-        directionalLight = new THREE.DirectionalLight(0xffffff,10);
-        directionalLight.position.set(0,1,0);
-        directionalLight.castShadow = true;
-        scene.add(directionalLight);
+        // directionalLight = new THREE.DirectionalLight(0xffffff,10);
+        // directionalLight.position.set(0,1,0);
+        // directionalLight.castShadow = true;
+        // scene.add(directionalLight);
 
-        pointLight = new THREE.PointLight( 0xffffff, 10 );
+        pointLight = new THREE.PointLight( 0xffffff, 1 );
 		pointLight.position.copy( camera.position );
 		scene.add( pointLight );
 
