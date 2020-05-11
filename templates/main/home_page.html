@@ -1,6 +1,7 @@
 {% extends "main/main_base.html" %}  {# main/main_base.html extends layout.html #}
 
 {% block content %}
+    <script src="../../static/js/crowded.js"></script>
     <nav class="nav">
         <a href={{ url_for('home_page') }} class="nav-item is-active" active-color="orange">{%trans%}Home{%endtrans%}</a>
         <a href={{ url_for('dashboard') }} class="nav-item" active-color="rebeccapurple">{%trans%}Dashboard{%endtrans%}</a>

@@ -72,8 +72,9 @@
                 });
             }
             function animate(){
-                renderer.render(scene,camera);
                 requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene,camera);
             }
             init();
         </script>
