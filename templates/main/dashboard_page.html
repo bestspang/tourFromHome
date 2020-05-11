@@ -3,16 +3,20 @@
 <script src="../../static/js/three.min.js"></script>
 <script src="../../static/js/GLTFLoader.js"></script>
 <script src="../../static/js/OrbitControls.js"></script>
+<script src="../../static/js/DRACOLoader.js"></script>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> -->
     <style>
-        body {
+        /*body {
           width: 100vw;
           height: 100vh;
           margin: 0;
           overflow: hidden;
+        }*/
+        a {
+            color: #2983ff;
         }
     </style>
 </head>
@@ -46,7 +50,7 @@
 </div>
 
 <script>
-    var scene, camera, renderer;
+    var scene, camera, renderer, pointLight;
 
     var container = document.getElementById( 'container' );
     function init(){
@@ -101,12 +105,19 @@
         container.appendChild( renderer.domElement );
         //document.body.appendChild(renderer.domElement);
 
-        let loader = new THREE.GLTFLoader();
+        // var dracoLoader = new DRACOLoader();
+        // dracoLoader.setDecoderPath( 'js/libs/draco/gltf/' );
+
+        var loader = new THREE.GLTFLoader();
         loader.load('../../static/js/scene.gltf', function(gltf){
-            place = gltf.scene.children[0];
+            //var place = gltf.scene.children[0];
+            var place = gltf.scene;
             place.scale.set(0.5,0.5,0.5);
+
             scene.add(gltf.scene);
+
             animate();
+
         }, undefined, function ( e ) {
             console.error( e );
         });
