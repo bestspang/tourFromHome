@@ -14,8 +14,8 @@
     <body>
         <h1>DASHBOARD</h1>
         <script src="../../static/js/three.min.js"></script>
-        <script src="../../static/js/GLTFLoader.js"></script>
         <script src="../../static/js/OrbitControls.js"></script>
+        <script src="../../static/js/GLTFLoader.js"></script>
         <script>
             let scene, camera, renderer;
 
@@ -60,7 +60,7 @@
                 renderer = new THREE.WebGLRenderer({antialias:true});
                 renderer.setSize(window.innerWidth,window.innerHeight);
 
-                //controls = new THREE.OrbitContrtol(camera, renderer.domElement);
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
                 document.body.appendChild(renderer.domElement);
 
                 let loader = new THREE.GLTFLoader();
@@ -73,7 +73,7 @@
             }
             function animate(){
                 requestAnimationFrame(animate);
-                //controls.update();
+                controls.update();
                 renderer.render(scene,camera);
             }
             init();
