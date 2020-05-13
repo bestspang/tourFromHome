@@ -17,7 +17,8 @@
         }*/
 
         body {
-            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
             /* padding: 0; */
         }
 
@@ -86,9 +87,10 @@
 </div>
 
 <script>
-    var scene, camera, renderer, pointLight;
+    var scene, camera, renderer, pointLight, sizemul;
 
     var container = document.getElementById( 'container' );
+    sizemul = 0.7;
     function init(){
 
         scene = new THREE.Scene();
@@ -133,8 +135,8 @@
         // scene.add(light4);
 
         renderer = new THREE.WebGLRenderer({antialias:true});
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight * 0.8);
+        //renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight * sizemul);
         // renderer.setSize($(container).width(), $(container).height());
         renderer.outputEncoding = THREE.sRGBEncoding;
 
@@ -163,9 +165,9 @@
         });
 
         window.onresize = function () {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = window.innerWidth / (window.innerHeight * sizemul);
             camera.updateProjectionMatrix();
-            renderer.setSize( window.innerWidth, window.innerHeight *0.8 );
+            renderer.setSize( window.innerWidth, window.innerHeight * sizemul );
             // renderer.setSize($(container).width(), $(container).height());
         };
     }
