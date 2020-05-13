@@ -134,8 +134,8 @@
 
         renderer = new THREE.WebGLRenderer({antialias:true});
         renderer.setPixelRatio( window.devicePixelRatio );
-        // renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.setSize($(container).width(), $(container).height());
+        renderer.setSize( window.innerWidth, window.innerHeight 0.8);
+        rende/rer.setSize($(container).width(), $(container).height());
         renderer.outputEncoding = THREE.sRGBEncoding;
 
         controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -165,8 +165,8 @@
         window.onresize = function () {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-            // renderer.setSize( window.innerWidth, window.innerHeight );
-            renderer.setSize($(container).width(), $(container).height());
+            renderer.setSize( window.innerWidth, window.innerHeight *0.8 );
+            // renderer.setSize($(container).width(), $(container).height());
         };
     }
 
