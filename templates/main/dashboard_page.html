@@ -20,17 +20,15 @@
         }
 
         #container {
-            height: 80%;
+            position: relative;
+            height: auto;
             width: 100%;
             margin: 0;
             overflow: hidden;
         }
         #info {
             position: absolute;
-            top: 0px;
-            width: 100%;
-            padding: 12%;
-            box-sizing: border-box;
+            top: 8px;
             text-align: center;
             -moz-user-select: none;
             -webkit-user-select: none;
@@ -65,11 +63,12 @@
 
 <h1>DASHBOARD</h1>
 
-<div id="container"></div>
-<div id="info">
-    <a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
-    Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
-    <a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
+<div id="container">
+    <div id="info">
+        <a href="https://www.idayx.com" target="_blank" rel="noopener">Tour from home</a> test run<br/>
+        Model: <a href="https://sketchfab.com/3d-models/ancient-greek-temple-8d1e30527438454185f9179cd730895d" target="_blank" rel="noopener">Ancient Greek temple</a> by
+        <a href="https://sketchfab.com/madziam" target="_blank" rel="noopener">madziam</a>, CC Attribution.
+    </div>
 </div>
 
 <script>
