@@ -1,6 +1,6 @@
 /**** class-based style modifiers ****/
 .no-margins { margin: 1px; }
-.with-margins { margin: 40px; }
+.with-margins { margin: 20px; }
 .col-centered { float: none; margin: 0 auto; }
 
 @import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');

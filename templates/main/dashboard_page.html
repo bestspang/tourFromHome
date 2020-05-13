@@ -15,8 +15,18 @@
           margin: 0;
           overflow: hidden;
         }*/
+
+        body {
+            margin: 0;
+            /* padding: 0; */
+        }
+
         a {
             color: #2983ff;
+        }
+
+        #main-div {
+            margin: 0;
         }
 
         #container {
@@ -28,7 +38,11 @@
         }
         #info {
             position: absolute;
-            top: 8px;
+            top: 3%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-sizing: border-box;
             text-align: center;
             -moz-user-select: none;
             -webkit-user-select: none;
@@ -120,7 +134,8 @@
 
         renderer = new THREE.WebGLRenderer({antialias:true});
         renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        // renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setSize($(container).width(), $(container).height());
         renderer.outputEncoding = THREE.sRGBEncoding;
 
         controls = new THREE.OrbitControls(camera, renderer.domElement);
