@@ -39,8 +39,6 @@
 
 <h1>CHAT</h1>
 
-{% if current_user.is_authenticated %}
-
    <h3 style='color: #ccc;font-size: 30px;'>No message yet..</h3>
    <div class="message_holder"></div>
 
@@ -78,10 +76,8 @@
      })
    </script>
 
-{% else %}
 
-<h2>Login is required!</h2>
+<!-- <h2>Login is required!</h2> -->
 
-{% endif %}
 
 {% endblock %}
