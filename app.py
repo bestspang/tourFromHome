@@ -197,11 +197,11 @@ def dashboard():
 def login():
     return render_template('login.html')
 
-@app.route("/chat")
-def login():
+@app.route('/chat')
+def chat():
     return render_template('main/chat_test.html')
 
-def messageReceived(methods=['GET', 'POST']):
+def messageReceived('/chat', methods=['GET', 'POST']):
     print('message was received!!!')
 
 @app.route('/main/profile', methods=['GET', 'POST'])
