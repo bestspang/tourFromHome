@@ -270,10 +270,10 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected')
 
-@socketio.on('my event')
+@socketio.on('my event', namespace='/chat')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
-    socketio.emit('my response', json, callback=messageReceived)
+    socketio.emit('my response', json, callback=messageReceived, namespace='/chat', broadcast=True)
 
 
 api.add_resource(Store, '/store/<string:name>')
