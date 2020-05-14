@@ -197,6 +197,13 @@ def dashboard():
 def login():
     return render_template('login.html')
 
+@app.route("/chat")
+def login():
+    return render_template('main/chat_test.html')
+
+def messageReceived(methods=['GET', 'POST']):
+    print('message was received!!!')
+
 @app.route('/main/profile', methods=['GET', 'POST'])
 @login_required
 def user_profile_page():
@@ -262,6 +269,11 @@ def test_connect():
 @socketio.on('disconnect', namespace='/test')
 def test_disconnect():
     print('Client disconnected')
+
+@socketio.on('my event', namespace='/chat')
+def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('my response', json, callback=messageReceived)
 
 
 api.add_resource(Store, '/store/<string:name>')
