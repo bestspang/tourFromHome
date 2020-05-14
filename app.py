@@ -201,8 +201,7 @@ def login():
 def chat():
     return render_template('main/chat_test.html')
 
-@app.route('/chat', methods=['GET', 'POST'])
-def messageReceived():
+def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
 @app.route('/main/profile', methods=['GET', 'POST'])
